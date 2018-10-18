@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.navigationController?.navigationBarHidden = true
+        self.navigationController?.isNavigationBarHidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func buttonSampleTapped(sender: AnyObject) {
-        if let resultController = self.storyboard?.instantiateViewControllerWithIdentifier("Sample") {
+        if let resultController = self.storyboard?.instantiateViewController(withIdentifier: "Sample") {
             self.parentNavigationController?.pushViewController(resultController, animated: true)
         }
     }
